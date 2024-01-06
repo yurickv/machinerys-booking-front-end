@@ -1,0 +1,72 @@
+.bike-list {
+  list-style: none;
+  max-width: 618px;
+}
+.bike-item {
+  color: #333;
+  margin-top: 12px;
+  padding: 12px 12px 12px 18px;
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  border: 2px solid;
+  display: flex;
+  justify-content: space-between;
+}
+.bike-name {
+  display: flex;
+  align-items: center;
+}
+.info-block {
+  text-align: start;
+}
+.price-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.button-delete {
+  padding: 0px;
+  border: 0px;
+  background-color: inherit;
+  width: 8px;
+  height: 8px;
+}
+.button-delete:hover {
+  color: red;
+}
+.price {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+}
+.bike-title {
+  padding-bottom: 5px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+}
+.bike-type {
+  padding-bottom: 5px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+.bike-id {
+  color: #717171;
+  /* font-family: Saira; */
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+}
+.bike-status {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+.select-status {
+  border-style: none;
+  background-color: inherit;
+}

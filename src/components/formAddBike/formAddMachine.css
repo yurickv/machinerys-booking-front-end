@@ -1,0 +1,41 @@
+.form-container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  padding-bottom: 16px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.input {
+  border-radius: 5px;
+  background: #e8e8e8;
+  border: 0px;
+  padding: 5px 16px;
+}
+.input-descrition {
+  grid-area: 4 / 1 / 6 / 3;
+  border-radius: 5px;
+  background: #e8e8e8;
+  border: 0px;
+  padding: 5px 16px;
+  text-align: start;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+.button-form {
+  border-radius: 5px;
+  background: #696969;
+  color: #fff;
+  text-align: center;
+  /* font-family: Saira; */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  border: 0px;
+  width: 235px;
+}
+.button-form:hover {
+  background-color: black;
+}

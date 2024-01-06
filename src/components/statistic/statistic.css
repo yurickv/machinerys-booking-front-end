@@ -1,0 +1,21 @@
+.title-stat {
+  color: #000;
+  /* font-family: Saira; */
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  padding-top: 10px;
+}
+.stat-item {
+  padding-top: 5px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+.stat-value {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+}
