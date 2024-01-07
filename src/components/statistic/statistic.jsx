@@ -19,10 +19,11 @@ export const Statistic = ({ statistic }) => {
         </li>
         <li className="stat-item">
           Average machinerys cost:{" "}
-          <span className="stat-value">{statistic.averagePrice}</span>
+          <span className="stat-value">{statistic.averagePrice}</span>{" "}
           UAH/hr.
         </li>
       </ul>
+
     </div>
   );
 };

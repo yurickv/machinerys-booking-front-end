@@ -1,8 +1,8 @@
-.bike-list {
+.machinery-list {
   list-style: none;
   max-width: 618px;
 }
-.bike-item {
+.machine-item {
   color: #333;
   margin-top: 12px;
   padding: 12px 12px 12px 18px;
@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
 }
-.bike-name {
+.machine-name {
   display: flex;
   align-items: center;
 }
@@ -40,26 +40,26 @@
   font-style: normal;
   font-weight: 400;
 }
-.bike-title {
+.machine-title {
   padding-bottom: 5px;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
 }
-.bike-type {
+.machine-type {
   padding-bottom: 5px;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
 }
-.bike-id {
+.machine-id {
   color: #717171;
   /* font-family: Saira; */
   font-size: 8px;
   font-style: normal;
   font-weight: 400;
 }
-.bike-status {
+.machine-status {
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: 14px;

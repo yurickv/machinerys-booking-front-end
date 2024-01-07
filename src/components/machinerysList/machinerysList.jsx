@@ -4,7 +4,7 @@ import { getBgColor } from "../../helpers/changeColor";
 
 export const MachinerysList = ({ machinerys }) => {
   return (
-    <ul className="bike-list">
+    <ul className="machinery-list">
       {machinerys.map(
         ({
           name,
@@ -19,20 +19,20 @@ export const MachinerysList = ({ machinerys }) => {
         }) => (
           <li
             key={_id}
-            className="bike-item"
+            className="machine-item"
             style={{ borderColor: getBgColor(status) }}
             disabled={status === "Unavailable"}
           >
             <div className="info-block">
-              <div className="bike-name">
-                <h3 className="bike-title">{name}</h3>{" "}
-                <p className="bike-type">&nbsp;- {type}&nbsp;</p>
+              <div className="machine-name">
+                <h3 className="machine-title">{name}</h3>{" "}
+                <p className="machine-type">&nbsp;- {type}&nbsp;</p>
               </div>
               <div>
-                <p className="bike-id">TEL:{number}</p>{" "}
+                <p className="machine-id">TEL:{number}</p>{" "}
                 <p>&#40;{contact}&#41;</p>
               </div>
-              <p className="bike-status">STATUS:{status}</p>
+              <p className="machine-status">STATUS: {" "}{status}</p>
             </div>
             <div className="price-block">
               <p>{location}</p>

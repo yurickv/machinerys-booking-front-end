@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Loader } from "./components/loader/loader";
 // import { useFetchBikes } from "./hooks/useFetchBikes";
 import { MachinerysList } from "./components/machinerysList/machinerysList";
-import { FormAddMachine } from "./components/formAddBike/formAddMachine";
+import { FormAddMachine } from "./components/formAddMachine/formAddMachine";
 import { Statistic } from "./components/statistic/statistic";
 import { getAllMachines, addMachines } from "./service/machineServiceAPI";
 
