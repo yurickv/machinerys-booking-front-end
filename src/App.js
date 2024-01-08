@@ -73,6 +73,14 @@ function App() {
       <header className="App-header"> Machinerys booking service</header>
       <main className="main">
         <section className="section-main">
+          <div className="bike-service-div">
+            <FormAddMachine newMachine={newMachine} />
+            <Statistic statistic={statistic} />
+          </div>
+          <div style={{ width: "1000px" }}>
+            <MapComponent />
+          </div>
+
           <div className="bike-list-div">
             {isLoading && <Loader />}
             {error && <h2>{error}</h2>}
@@ -80,22 +88,8 @@ function App() {
               <MachinerysList machinerys={machinerysList} />
             )}
           </div>
-
-          <div className="bike-service-div">
-            <FormAddMachine newMachine={newMachine} />
-            <Statistic statistic={statistic} />
-          </div>
-        </section>
-        <section style={{ maxWidth: "1000px" }}>
-          <MapComponent />
         </section>
       </main>
-      <footer className="App-footer">
-        <p>&copy; 2024 Machinerys Booking Service</p>
-        <h3 className="author">
-          Developer: <span className="author-name">Teslyuk Yuriy</span>
-        </h3>
-      </footer>
     </>
   );
 }

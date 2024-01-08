@@ -1,17 +1,16 @@
 .main {
-  padding: 24px 24px 64px 24px;
+  padding: 10px 24px 64px 24px;
 }
 .section-main {
   /* padding: 24px 24px 64px 24px; */
   display: flex;
+  gap: 12px;
+  justify-content: space-between;
 }
 .bike-list-div {
-  min-width: 500px;
-  padding-right: 10px;
-  border-right: 1px solid #c4c4c4;
 }
 .bike-service-div {
-  padding-left: 10px;
+  width: 302px;
 }
 
 .App-header {
@@ -19,30 +18,19 @@
   padding: 4px 16px;
   font-size: calc(10px + 2vmin);
   color: #e8e8e8;
-  /* font-family: Saira Stencil One; */
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
 }
-.App-footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: #696969;
-  position: fixed;
-  bottom: 0;
-  width: calc(100% - 20px);
-}
+
 .author {
   color: #cbcaca;
-  /* font-family: Saira; */
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
 }
 .author-name {
   color: #fff;
-  /* font-family: Saira; */
   font-size: 20px;
   font-style: normal;
   font-weight: 400;

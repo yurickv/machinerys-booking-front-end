@@ -1,6 +1,7 @@
 import "./machinerysList.css";
 // import { IoCloseSharp } from "react-icons/io5";
 import { getBgColor } from "../../helpers/changeColor";
+import { Location } from "../icons/location";
 
 export const MachinerysList = ({ machinerys }) => {
   return (
@@ -16,6 +17,7 @@ export const MachinerysList = ({ machinerys }) => {
           status,
           location,
           description,
+          foto_url,
         }) => (
           <li
             key={_id}
@@ -23,20 +25,17 @@ export const MachinerysList = ({ machinerys }) => {
             style={{ borderColor: getBgColor(status) }}
             disabled={status === "Unavailable"}
           >
-            <div className="info-block">
-              <div className="machine-name">
-                <h3 className="machine-title">{name}</h3>{" "}
-                <p className="machine-type">&nbsp;- {type}&nbsp;</p>
-              </div>
-              <div>
-                <p className="machine-id">TEL:{number}</p>{" "}
-                <p>&#40;{contact}&#41;</p>
-              </div>
-              <p className="machine-status">STATUS: {" "}{status}</p>
+            <div className="foto-div">
+              <img alt={name} src={foto_url} className="foto" />
             </div>
-            <div className="price-block">
-              <p>{location}</p>
-              <p className="price">{price}.00 UAH/hr</p>
+            <div className="info-block">
+              <h3 className="machine-title">{name}</h3>
+              <p className="machine-type"> {type}</p>
+              <p className="price">{price} UAH/hr</p>
+              <div className="location">
+                <Location />
+                <p>{location}</p>
+              </div>
             </div>
           </li>
         )

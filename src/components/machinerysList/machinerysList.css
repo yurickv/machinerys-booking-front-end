@@ -1,48 +1,38 @@
 .machinery-list {
   list-style: none;
-  max-width: 618px;
+  max-width: 300px;
+  color: #333;
 }
 .machine-item {
+  width: 240px;
+  height: 350px;
   color: #333;
   margin-top: 12px;
-  padding: 12px 12px 12px 18px;
   background-color: #e8e8e8;
   border-radius: 10px;
-  border: 2px solid;
-  display: flex;
-  justify-content: space-between;
+  border: 0.5px solid;
+  overflow: hidden;
 }
-.machine-name {
-  display: flex;
-  align-items: center;
+.foto-div {
+  width: 240px;
+  height: 200px;
+  overflow: hidden;
 }
+.foto {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 .info-block {
+  padding: 12px;
   text-align: start;
 }
-.price-block {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-.button-delete {
-  padding: 0px;
-  border: 0px;
-  background-color: inherit;
-  width: 8px;
-  height: 8px;
-}
-.button-delete:hover {
-  color: red;
-}
-.price {
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-}
+
 .machine-title {
   padding-bottom: 5px;
-  font-size: 14px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
 }
@@ -52,20 +42,39 @@
   font-style: normal;
   font-weight: 400;
 }
-.machine-id {
+.price {
+  margin-top: 10px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+}
+.location {
+  margin-top: 5px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+/* .machine-id {
   color: #717171;
-  /* font-family: Saira; */
   font-size: 8px;
   font-style: normal;
   font-weight: 400;
-}
-.machine-status {
+} */
+/* .machine-status {
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-}
+} */
 .select-status {
   border-style: none;
   background-color: inherit;

@@ -1,3 +1,9 @@
+.statistic-div {
+  text-align: start;
+  margin-top: 10px;
+  padding-top: 16px;
+  border-top: 1px solid #c4c4c4;
+}
 .title-stat {
   color: #000;
   /* font-family: Saira; */
@@ -5,8 +11,6 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-
-  padding-top: 10px;
 }
 .stat-item {
   padding-top: 5px;
