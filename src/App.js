@@ -6,6 +6,7 @@ import { FormAddMachine } from "./components/formAddMachine/formAddMachine";
 import { Statistic } from "./components/statistic/statistic";
 import { getAllMachines, addMachines } from "./service/machineServiceAPI";
 import MapComponent from "./components/mapComponent/mapComponent";
+import { convertLocationsToCoordinates } from "./helpers/changeLocationToCoordinate";
 
 const announcements = [
   {
@@ -78,7 +79,7 @@ function App() {
             <Statistic statistic={statistic} />
           </div>
           <div style={{ width: "1000px" }}>
-            <MapComponent />
+            <MapComponent data={machinerysList} />
           </div>
 
           <div className="bike-list-div">

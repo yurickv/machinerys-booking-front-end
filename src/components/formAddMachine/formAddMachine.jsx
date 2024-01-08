@@ -2,34 +2,7 @@ import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import "./formAddMachine.css";
 import { Image, CloudinaryContext } from "cloudinary-react";
-
-const oblastiUkrainy = [
-  "Vinnytska obl",
-  "Volynska obl",
-  "Dnipropetrovska obl",
-  "Donetska obl",
-  "Zhytomyrska obl",
-  "Zakarpatska obl",
-  "Zaporizka obl",
-  "Ivano-Frankivska obl",
-  "Kirovohradska obl",
-  "Kyivska obl",
-  "Kyiv",
-  "Luhanska obl",
-  "Lvivska obl",
-  "Mykolaivska obl",
-  "Odeska obl",
-  "Poltavska obl",
-  "Rivnenska obl",
-  "Sumska obl",
-  "Ternopilska obl",
-  "Kharkivska obl",
-  "Khersonska obl",
-  "Khmelnytska obl",
-  "Cherkaska obl",
-  "Chernihivska obl",
-  "Chernivetska obl",
-];
+import { oblastiUkrainy } from "../../constant/locationCoordinate";
 
 export const FormAddMachine = ({ newMachine }) => {
   const [image, setImage] = useState(
