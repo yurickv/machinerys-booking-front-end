@@ -1,15 +1,30 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { Loader } from "./components/loader/loader";
-// import { useFetchBikes } from "./hooks/useFetchBikes";
 import { MachinerysList } from "./components/machinerysList/machinerysList";
 import { FormAddMachine } from "./components/formAddMachine/formAddMachine";
 import { Statistic } from "./components/statistic/statistic";
 import { getAllMachines, addMachines } from "./service/machineServiceAPI";
+import MapComponent from "./components/mapComponent/mapComponent";
+
+const announcements = [
+  {
+    id: 1,
+    location: {
+      lat: 49.0136,
+      lng: 28.2232,
+    },
+  },
+  {
+    id: 2,
+    location: {
+      lat: 50.4396,
+      lng: 30.5437,
+    },
+  },
+];
 
 function App() {
-  // const { bikesList, isLoading, error, deleteBikes } = useFetchBikes();
-
   const [machinerysList, setMaghinerysList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -56,7 +71,7 @@ function App() {
   return (
     <>
       <header className="App-header"> Machinerys booking service</header>
-      <main>
+      <main className="main">
         <section className="section-main">
           <div className="bike-list-div">
             {isLoading && <Loader />}
@@ -65,10 +80,14 @@ function App() {
               <MachinerysList machinerys={machinerysList} />
             )}
           </div>
+
           <div className="bike-service-div">
             <FormAddMachine newMachine={newMachine} />
             <Statistic statistic={statistic} />
           </div>
+        </section>
+        <section style={{ maxWidth: "1000px" }}>
+          <MapComponent />
         </section>
       </main>
       <footer className="App-footer">

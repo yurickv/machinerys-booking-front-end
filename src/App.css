@@ -1,5 +1,8 @@
-.section-main {
+.main {
   padding: 24px 24px 64px 24px;
+}
+.section-main {
+  /* padding: 24px 24px 64px 24px; */
   display: flex;
 }
 .bike-list-div {
@@ -10,12 +13,6 @@
 .bike-service-div {
   padding-left: 10px;
 }
-/* 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
 
 .App-header {
   background-color: #696969;
@@ -50,11 +47,3 @@
   font-style: normal;
   font-weight: 400;
 }
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
