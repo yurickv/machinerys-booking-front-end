@@ -5,11 +5,11 @@ import { Map, Marker } from "pigeon-maps";
 import { convertLocationsToCoordinates } from "../../helpers/changeLocationToCoordinate";
 
 const MapComponent = ({ data, setVisibleMachine, setCheckedMarker }) => {
-  const [center, setCenter] = useState([49.406354, 30.656883])
-  const [zoom, setZoom] = useState(7)
+  const [center, setCenter] = useState([49.406354, 30.656883]);
+  const [zoom, setZoom] = useState(7);
   const [bounds, setBounds] = useState({ sw: [0, 0], ne: [0, 0] }); // Initialize with default bounds
   const [newCoordinates, setNewCoordinates] = useState([]);
-
+  const [checkedMarker, setCheckedMarkerId] = useState(null);
 
   useEffect(() => {
     setNewCoordinates(convertLocationsToCoordinates(data));
@@ -20,7 +20,12 @@ const MapComponent = ({ data, setVisibleMachine, setCheckedMarker }) => {
   }, [bounds, newCoordinates]);
 
   const visibleMarkers = (bounds) => {
-    if (bounds.sw[0] === 0 && bounds.sw[1] === 0 && bounds.ne[0] === 0 && bounds.ne[1] === 0) {
+    if (
+      bounds.sw[0] === 0 &&
+      bounds.sw[1] === 0 &&
+      bounds.ne[0] === 0 &&
+      bounds.ne[1] === 0
+    ) {
       return;
     }
 
@@ -32,13 +37,13 @@ const MapComponent = ({ data, setVisibleMachine, setCheckedMarker }) => {
         bounds.sw[0] <= marker.location[0]
       );
     });
-    setVisibleMachine(visibleMachinery)
+    setVisibleMachine(visibleMachinery);
   };
 
   const handleMarkerClick = (_id) => {
+    setCheckedMarkerId(_id);
     setCheckedMarker({ _id });
   };
-
 
   return (
     <Map
@@ -46,21 +51,25 @@ const MapComponent = ({ data, setVisibleMachine, setCheckedMarker }) => {
       center={center}
       zoom={zoom}
       onBoundsChanged={({ center, zoom, bounds }) => {
-        setCenter(center)
-        setZoom(zoom)
-        setBounds(bounds)
+        setCenter(center);
+        setZoom(zoom);
+        setBounds(bounds);
       }}
-      onClick={() => setCheckedMarker({})}
+      onClick={() => {
+        setCheckedMarker({});
+        setCheckedMarkerId(null);
+      }}
     >
       {newCoordinates.map((item) => (
         <Marker
           key={item._id}
           width={30}
           anchor={item.location}
+          color={checkedMarker === item._id ? "#FFC400" : undefined}
           onClick={() => handleMarkerClick(item._id)}
         />
       ))}
     </Map>
   );
 };
-export default MapComponent;  
+export default MapComponent;

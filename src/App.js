@@ -62,7 +62,7 @@ function App() {
             <FormAddMachine newMachine={newMachine} />
             <Statistic statistic={statistic} />
           </div>
-          <div style={{ width: "1000px" }}>
+          <div style={{ width: "1500px" }}>
             <MapComponent
               data={machinerysList}
               setVisibleMachine={setVisibleMachine}
