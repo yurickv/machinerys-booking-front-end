@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/machinerys-booking-front-end/static/css/main.02c9725e.css",
+    "main.js": "/machinerys-booking-front-end/static/js/main.63b4747d.js",
+    "index.html": "/machinerys-booking-front-end/index.html",
+    "main.02c9725e.css.map": "/machinerys-booking-front-end/static/css/main.02c9725e.css.map",
+    "main.63b4747d.js.map": "/machinerys-booking-front-end/static/js/main.63b4747d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.02c9725e.css",
+    "static/js/main.63b4747d.js"
+  ]
+}
