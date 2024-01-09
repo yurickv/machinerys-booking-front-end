@@ -5,4 +5,4 @@ On the map you can see mechanisms are available for rent. Also you can add your 
 
 To start type in console command npm start.
 
-App deployed on https://yurickv.github.io/machinerys-booking-service-front/ (so you can check job online live).
+App deployed on https://yurickv.github.io/machinerys-booking-front-end/ (so you can check Web app job online live).
