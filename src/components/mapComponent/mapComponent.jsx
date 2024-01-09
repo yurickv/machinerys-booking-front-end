@@ -4,12 +4,12 @@ import { useState } from "react";
 import { Map, Marker } from "pigeon-maps";
 import { convertLocationsToCoordinates } from "../../helpers/changeLocationToCoordinate";
 
-const MapComponent = ({ data }) => {
-  // const [hue, setHue] = useState(0);
+const MapComponent = ({ data, setVisibleMachine, setCheckedMarker }) => {
   const [center, setCenter] = useState([49.406354, 30.656883])
   const [zoom, setZoom] = useState(7)
   const [bounds, setBounds] = useState({ sw: [0, 0], ne: [0, 0] }); // Initialize with default bounds
   const [newCoordinates, setNewCoordinates] = useState([]);
+
 
   useEffect(() => {
     setNewCoordinates(convertLocationsToCoordinates(data));
@@ -21,11 +21,10 @@ const MapComponent = ({ data }) => {
 
   const visibleMarkers = (bounds) => {
     if (bounds.sw[0] === 0 && bounds.sw[1] === 0 && bounds.ne[0] === 0 && bounds.ne[1] === 0) {
-      // Skip if bounds are not available yet
       return;
     }
 
-    const result = newCoordinates.filter((marker) => {
+    const visibleMachinery = newCoordinates.filter((marker) => {
       return (
         bounds.ne[1] >= marker.location[1] &&
         bounds.ne[0] >= marker.location[0] &&
@@ -33,27 +32,32 @@ const MapComponent = ({ data }) => {
         bounds.sw[0] <= marker.location[0]
       );
     });
-    console.log("видимі:", result);
+    setVisibleMachine(visibleMachinery)
   };
+
+  const handleMarkerClick = (_id) => {
+    setCheckedMarker({ _id });
+  };
+
 
   return (
     <Map
-      height={600}
-      width={600}
+      height={700}
       center={center}
       zoom={zoom}
       onBoundsChanged={({ center, zoom, bounds }) => {
         setCenter(center)
         setZoom(zoom)
         setBounds(bounds)
-      }} >
-      {newCoordinates.map((item, index) => (
+      }}
+      onClick={() => setCheckedMarker({})}
+    >
+      {newCoordinates.map((item) => (
         <Marker
-          key={index}
+          key={item._id}
           width={30}
           anchor={item.location}
-        // color={color}
-        // onClick={() => setHue(hue + 20)}
+          onClick={() => handleMarkerClick(item._id)}
         />
       ))}
     </Map>

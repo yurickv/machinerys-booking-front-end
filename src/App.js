@@ -6,30 +6,14 @@ import { FormAddMachine } from "./components/formAddMachine/formAddMachine";
 import { Statistic } from "./components/statistic/statistic";
 import { getAllMachines, addMachines } from "./service/machineServiceAPI";
 import MapComponent from "./components/mapComponent/mapComponent";
-import { convertLocationsToCoordinates } from "./helpers/changeLocationToCoordinate";
-
-const announcements = [
-  {
-    id: 1,
-    location: {
-      lat: 49.0136,
-      lng: 28.2232,
-    },
-  },
-  {
-    id: 2,
-    location: {
-      lat: 50.4396,
-      lng: 30.5437,
-    },
-  },
-];
 
 function App() {
   const [machinerysList, setMaghinerysList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [statistic, setStatistic] = useState({});
+  const [visibleMachine, setVisibleMachine] = useState([]);
+  const [checkedMarker, setCheckedMarker] = useState({});
 
   useEffect(() => {
     const controller = new AbortController();
@@ -79,14 +63,22 @@ function App() {
             <Statistic statistic={statistic} />
           </div>
           <div style={{ width: "1000px" }}>
-            <MapComponent data={machinerysList} />
+            <MapComponent
+              data={machinerysList}
+              setVisibleMachine={setVisibleMachine}
+              setCheckedMarker={setCheckedMarker}
+            />
           </div>
 
           <div className="bike-list-div">
             {isLoading && <Loader />}
             {error && <h2>{error}</h2>}
             {machinerysList.length && (
-              <MachinerysList machinerys={machinerysList} />
+              <MachinerysList
+                machinerys={machinerysList}
+                visibleMacinerys={visibleMachine}
+                checkedMarker={checkedMarker}
+              />
             )}
           </div>
         </section>

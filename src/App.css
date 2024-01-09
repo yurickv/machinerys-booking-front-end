@@ -8,6 +8,7 @@
   justify-content: space-between;
 }
 .bike-list-div {
+  min-width: 242px;
 }
 .bike-service-div {
   width: 302px;
