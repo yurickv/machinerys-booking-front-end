@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/machinerys-booking-front-end/static/css/main.02c9725e.css",
-    "main.js": "/machinerys-booking-front-end/static/js/main.63b4747d.js",
+    "main.js": "/machinerys-booking-front-end/static/js/main.5fc4e400.js",
     "index.html": "/machinerys-booking-front-end/index.html",
     "main.02c9725e.css.map": "/machinerys-booking-front-end/static/css/main.02c9725e.css.map",
-    "main.63b4747d.js.map": "/machinerys-booking-front-end/static/js/main.63b4747d.js.map"
+    "main.5fc4e400.js.map": "/machinerys-booking-front-end/static/js/main.5fc4e400.js.map"
   },
   "entrypoints": [
     "static/css/main.02c9725e.css",
-    "static/js/main.63b4747d.js"
+    "static/js/main.5fc4e400.js"
   ]
 }
