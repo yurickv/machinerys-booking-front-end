@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./formAddMachine.css";
 import { Image, CloudinaryContext } from "cloudinary-react";
 import { oblastiUkrainy } from "../../constant/locationCoordinate";
+import { validationSchema } from "../../helpers/yupValidationSchema";
+
 
 export const FormAddMachine = ({ newMachine }) => {
   const [image, setImage] = useState(
@@ -100,6 +102,7 @@ export const FormAddMachine = ({ newMachine }) => {
           description: "",
         }}
         onSubmit={handleSubmit}
+        validationSchema={validationSchema}
       >
         {(formik) => (
           <Form className="form-container">
@@ -107,38 +110,18 @@ export const FormAddMachine = ({ newMachine }) => {
               className="input"
               type="text"
               name="name"
-              minLength="5"
-              maxLength="25"
-              placeholder="Name"
-              title="Name may contain only letters, apostrophe, dash and spaces."
-              required
-            />
+              placeholder="Your machine"
+            /><ErrorMessage name="name" component="div" className="error-message" />
             <Field
               className="input"
               type="text"
               name="type"
-              minLength="5"
-              maxLength="25"
               placeholder="Type"
-              title="Type may contain only letters, apostrophe, dash and spaces."
-              required
-            />
-            <Field
-              className="input"
-              type="text"
-              name="contact"
-              minLength="3"
-              maxLength="25"
-              placeholder="Contact"
-              title="Contact may contain only letters, apostrophe, dash and spaces."
-              required
-            />
+            /><ErrorMessage name="type" component="div" className="error-message" />
             <Field
               as="select"
               className="input"
               name="location"
-              title="Select location"
-              required
             >
               <option value="" disabled hidden>
                 Select location
@@ -148,38 +131,32 @@ export const FormAddMachine = ({ newMachine }) => {
                   {location}
                 </option>
               ))}
-            </Field>
+            </Field><ErrorMessage name="location" component="div" className="error-message" />
             <Field
               className="input"
               type="number"
               name="price"
-              min="100"
-              max="2000"
               placeholder="Price"
-              title="Price - only numbers."
-              required
-            />
+            /><ErrorMessage name="price" component="div" className="error-message" />
+            <Field
+              className="input"
+              type="text"
+              name="contact"
+              placeholder="Lessor name"
+            /><ErrorMessage name="contact" component="div" className="error-message" />
             <Field
               className="input"
               type="text"
               name="number"
-              minLength="7"
-              maxLength="10"
               placeholder="Phone number"
-              title="Only numbers"
-              required
-            />
+            /><ErrorMessage name="number" component="div" className="error-message" />
             <Field
               as="textarea"
               className="input-description"
               type="text"
               name="description"
-              minLength="5"
-              maxLength="250"
               placeholder="Description"
-              title="Description may contain only letters, apostrophe, dash and spaces."
-              required
-            />
+            /><ErrorMessage name="description" component="div" className="error-message" />
             <button
               type="reset"
               className="button-clear"
